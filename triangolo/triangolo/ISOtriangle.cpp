@@ -124,7 +124,12 @@ void ISOtriangle::GetDim(float& b, float& s) {
 /// @return the area 
 float ISOtriangle::GetArea() {
 
-	return (base * (sqrt(side * side - side * side / 4)));
+	return (base * GetHeight() / 2);
+}
+
+float ISOtriangle:: GetHeight() {
+
+	return sqrt((side * side) - (base * base / 4));
 }
 
 /// @brief write an error message 
@@ -154,6 +159,7 @@ void ISOtriangle::Dump() {
 
 	cout << "Base = " << base << endl;
 	cout << "Side = " << side << endl;
+	cout << "Height = " << GetHeight() << endl;
 
 	Triangle::Dump();
 

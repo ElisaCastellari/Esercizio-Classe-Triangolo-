@@ -52,6 +52,7 @@ public:
 	void SetDim(float b, float s);
 	void GetDim(float& b, float& s);
 
+	float GetHeight();
 	float GetArea();
 	/// @}
 

@@ -119,7 +119,12 @@ void EQtriangle::GetDim(float& s) {
 /// @return the area 
 float EQtriangle::GetArea() {
 
-	return (side * (sqrt(side*side - side*side/4)));
+	return side * GetHeight() /2;
+}
+
+float EQtriangle::GetHeight() {
+
+	return sqrt((side * side) - (side * side / 4));
 }
 
 /// @brief write an error message 
@@ -148,6 +153,7 @@ void EQtriangle::Dump() {
 	cout << endl;
 
 	cout << "Side = " << side << endl;
+	cout << "Height = " << GetHeight() << endl;
 
 	Triangle::Dump();
 

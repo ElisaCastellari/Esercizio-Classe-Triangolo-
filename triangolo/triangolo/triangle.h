@@ -47,6 +47,7 @@ public:
 
 	/// @name GETTERS
 	/// @{
+	virtual float GetHeight() = 0; //prova virtual
 	float GetPerimeter();
 	void GetSides(float& s0, float& s1, float& s2);
 	/// @}
