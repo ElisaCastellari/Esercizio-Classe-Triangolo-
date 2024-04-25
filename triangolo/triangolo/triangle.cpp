@@ -9,6 +9,24 @@ Triangle::Triangle() {
 
 }
 
+
+/// @brief constructor 
+/// @param s0, s1, s2 side of the Triangle
+Triangle::Triangle(float s0, float s1, float s2) {
+
+	Init();
+
+	cout <<"Triangle - constructor" << endl;
+
+	if (s0 <= 0 || s1 <= 0 || s2 <= 0) {
+		WarningMessage("constructor: side should be > 0");
+		SetSides(0, 0, 0);
+	}
+	else
+		SetSides(s0, s1, s2);
+
+}
+
 /// @brief copy constructor 
 /// @param o reference to the object that should be copied 
 Triangle::Triangle(const Triangle& o) {
@@ -81,6 +99,11 @@ void Triangle::Reset() {
 
 }
 
+/// @brief get the perimeter of the object
+/// @return perimeter 
+float Triangle::GetHeight() {
+	return 2*(sqrt(GetPerimeter() * (GetPerimeter() - sides[0]) * (GetPerimeter() - sides[1]) * (GetPerimeter() - sides[2]))) / sides[0];
+}
 
 /// @brief get the perimeter of the object
 /// @return perimeter 
@@ -88,6 +111,13 @@ float Triangle::GetPerimeter() {
 
 	return (sides[0] + sides[1] + sides[2]);
 
+}
+
+/// @brief computes the area of the object
+/// @return the area 
+float Triangle::GetArea() {
+
+	return (sides[0] * GetHeight() / 2);
 }
 
 /// @brief get the sides of the object 

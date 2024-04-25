@@ -2,6 +2,8 @@
 
 #include "EQtriangle.h"
 #include "ISOtriangle.h"
+#include "RECTtriangle.h"
+
 
 int main() {
 	EQtriangle a(2);
@@ -22,6 +24,11 @@ int main() {
 	e = d;
 	e.Dump();
 	ISOtriangle f = d;
+	RECTtriangle g(1, 3);
+	g.Dump();
+	Triangle h (1, 2, 5);
+	h.Dump();
+	cout << "the area of triangle h is: " << h.GetArea() << endl;
 
 	return 0;
 }

@@ -28,6 +28,7 @@ public:
 	/// @{
 	Triangle();
 	Triangle(const Triangle& o);
+	Triangle(float s0, float s1, float s2);
 	virtual ~Triangle();
 	/// @}
 
@@ -47,8 +48,9 @@ public:
 
 	/// @name GETTERS
 	/// @{
-	virtual float GetHeight() = 0; //prova virtual
+	virtual float GetHeight();
 	float GetPerimeter();
+	float GetArea();
 	void GetSides(float& s0, float& s1, float& s2);
 	/// @}
 

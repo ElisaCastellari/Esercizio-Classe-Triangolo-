@@ -6,7 +6,7 @@
 
 
 #ifndef ISOSCELES_H
-#define ISOSCELESL_H
+#define ISOSCELES_H
 
 #include<iostream>
 
@@ -48,7 +48,7 @@ public:
 
 
 	/// @name GETTERS / SETTERS
-	/// @{
+	/// @
 	void SetDim(float b, float s);
 	void GetDim(float& b, float& s);
 
