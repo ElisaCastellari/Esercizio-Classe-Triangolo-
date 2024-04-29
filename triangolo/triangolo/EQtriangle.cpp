@@ -122,6 +122,8 @@ float EQtriangle::GetArea() {
 	return side * GetHeight() /2;
 }
 
+/// @brief computes the height of the object
+/// @return the height
 float EQtriangle::GetHeight() {
 
 	return sqrt((side * side) - (side * side / 4));

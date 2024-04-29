@@ -127,6 +127,8 @@ float ISOtriangle::GetArea() {
 	return (base * GetHeight() / 2);
 }
 
+/// @brief computes the height of the object
+/// @return the height
 float ISOtriangle:: GetHeight() {
 
 	return sqrt((side * side) - (base * base / 4));

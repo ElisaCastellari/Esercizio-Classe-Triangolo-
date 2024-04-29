@@ -102,7 +102,7 @@ void Triangle::Reset() {
 /// @brief get the perimeter of the object
 /// @return perimeter 
 float Triangle::GetHeight() {
-	return 2*(sqrt(GetPerimeter() * (GetPerimeter() - sides[0]) * (GetPerimeter() - sides[1]) * (GetPerimeter() - sides[2]))) / sides[0];
+	return 2* GetArea() / sides[0];
 }
 
 /// @brief get the perimeter of the object
@@ -113,11 +113,26 @@ float Triangle::GetPerimeter() {
 
 }
 
+/// @brief get the semiperimeter of the object
+/// @return semiperimeter 
+float Triangle::GetSemiPerimeter() {
+	return GetPerimeter() / 2;
+}
+
 /// @brief computes the area of the object
+/// @brief uses Erone's formula
+/// @param areaSecondPower is area^2
 /// @return the area 
 float Triangle::GetArea() {
 
-	return (sides[0] * GetHeight() / 2);
+	float areaSecondPower = (GetSemiPerimeter() * (GetSemiPerimeter() - sides[0]) * (GetSemiPerimeter() - sides[1]) * (GetSemiPerimeter() - sides[2]));
+
+/// @brief changes sign of areaSecondPower if negative
+	if (areaSecondPower < 0) {
+		areaSecondPower *= -1;
+	}
+
+	return sqrt(areaSecondPower);
 }
 
 /// @brief get the sides of the object 
@@ -147,13 +162,15 @@ void Triangle::WarningMessage(const char* string) {
 
 	cout << endl << "WARNING -- Triangle --";
 	cout << string << endl;
-
+	
 }
 
 
 /// @brief for debugging: all about the object
 void Triangle::Dump() {
 
+	cout << endl;
+	cout << "---Triangle---" << endl;
 	cout << endl;
 	cout << "Sides = " << sides[0] << "; " << sides[1] << "; " << sides[2] << endl;
 	cout << "Perimeter = " << GetPerimeter() << endl;

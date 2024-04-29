@@ -1,7 +1,7 @@
 /*! \file CTriangle.h
 	\brief Declaration of the general class Triangle
 
-	Details.
+	it also imlpemets the formulas for the scalene triangle, the most general triangle
 */
 
 
@@ -50,7 +50,8 @@ public:
 	/// @{
 	virtual float GetHeight();
 	float GetPerimeter();
-	float GetArea();
+	float GetSemiPerimeter();
+	virtual float GetArea();
 	void GetSides(float& s0, float& s1, float& s2);
 	/// @}
 

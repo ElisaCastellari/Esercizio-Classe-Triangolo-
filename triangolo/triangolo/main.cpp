@@ -29,6 +29,7 @@ int main() {
 	Triangle h (1, 2, 5);
 	h.Dump();
 	cout << "the area of triangle h is: " << h.GetArea() << endl;
+	cout << "the height of triangle h is: " << h.GetHeight() << endl;
 
 	return 0;
 }
