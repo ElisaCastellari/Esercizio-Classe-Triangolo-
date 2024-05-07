@@ -29,6 +29,10 @@ ISOtriangle::ISOtriangle(float b, float s) {
 		WarningMessage("constructor: side should be > 0");
 		SetDim(0, 0);
 	}
+	else if ((s * s) - (b * b / 4) <= 0) {
+		WarningMessage("constructor: this is NOT a triangle");
+		SetDim(0, 0);
+	}
 	else
 		SetDim(b, s);
 

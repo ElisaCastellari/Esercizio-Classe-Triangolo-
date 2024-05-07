@@ -1,3 +1,9 @@
+/// \file triangle.cpp
+///	\brief class triangle: implementation of the functions
+///
+///	Details.
+///
+
 #include "triangle.h"
 
 /// @brief default constructor 
@@ -20,6 +26,10 @@ Triangle::Triangle(float s0, float s1, float s2) {
 
 	if (s0 <= 0 || s1 <= 0 || s2 <= 0) {
 		WarningMessage("constructor: side should be > 0");
+		SetSides(0, 0, 0);
+	}
+	else if (s0 > s1 + s2 || s1 > s0 + s2 || s2 > s1 + s0) {
+		WarningMessage("constructor: this is NOT a triangle");
 		SetSides(0, 0, 0);
 	}
 	else
@@ -126,12 +136,6 @@ float Triangle::GetSemiPerimeter() {
 float Triangle::GetArea() {
 
 	float areaSecondPower = (GetSemiPerimeter() * (GetSemiPerimeter() - sides[0]) * (GetSemiPerimeter() - sides[1]) * (GetSemiPerimeter() - sides[2]));
-
-/// @brief changes sign of areaSecondPower if negative
-	if (areaSecondPower < 0) {
-		areaSecondPower *= -1;
-	}
-
 	return sqrt(areaSecondPower);
 }
 

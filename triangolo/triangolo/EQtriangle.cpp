@@ -1,4 +1,4 @@
-/// \file CEQtriangle.cpp
+/// \file EQtriangle.cpp
 ///	\brief class EQtriangle: implementation of the functions
 ///
 ///	Details.
