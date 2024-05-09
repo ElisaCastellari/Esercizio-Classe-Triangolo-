@@ -48,10 +48,10 @@ public:
 
 	/// @name GETTERS
 	/// @{
-	virtual float GetHeight();
+	virtual float GetHeight() = 0;
 	float GetPerimeter();
 	float GetSemiPerimeter();
-	virtual float GetArea();
+	virtual float GetArea()= 0;
 	void GetSides(float& s0, float& s1, float& s2);
 	/// @}
 

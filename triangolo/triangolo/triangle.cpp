@@ -108,12 +108,13 @@ void Triangle::Reset() {
 	sides[0] = sides[1] = sides[2] = 0.;
 
 }
-
+/*
 /// @brief get the perimeter of the object
 /// @return perimeter 
 float Triangle::GetHeight() {
 	return 2* GetArea() / sides[0];
 }
+*/
 
 /// @brief get the perimeter of the object
 /// @return perimeter 
@@ -129,6 +130,7 @@ float Triangle::GetSemiPerimeter() {
 	return GetPerimeter() / 2;
 }
 
+/*
 /// @brief computes the area of the object
 /// @brief uses Erone's formula
 /// @param areaSecondPower is area^2
@@ -138,6 +140,7 @@ float Triangle::GetArea() {
 	float areaSecondPower = (GetSemiPerimeter() * (GetSemiPerimeter() - sides[0]) * (GetSemiPerimeter() - sides[1]) * (GetSemiPerimeter() - sides[2]));
 	return sqrt(areaSecondPower);
 }
+*/
 
 /// @brief get the sides of the object 
 /// @param s0 side 0 

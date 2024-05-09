@@ -6,6 +6,7 @@
 
 #include<iostream>
 #include "RECTtriangle.h"
+//using namespace RECTtriangle
 
 /// @brief default constructor 
 RECTtriangle::RECTtriangle() {
